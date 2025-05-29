@@ -1,0 +1,17 @@
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 15px 30px;
+  background: var(--white);
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0 30px 30px;
+}

@@ -1,0 +1,92 @@
+/* MODAL STYLE */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 100;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--white);
+  width: 500px;
+  max-width: 90%;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.modal.active .modal-content {
+  transform: translateY(0);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+.close:hover {
+  color: var(--text);
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+#seeMoreModal .modal-content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#eventsListContainer .event-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+#eventsListContainer .event-title {
+  flex-grow: 1;
+}
+
+#eventsListContainer button {
+  margin-left: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+#eventsListContainer button.edit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+#eventsListContainer button.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}

@@ -1,0 +1,106 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>CALENDAR EXAMINATION</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media-query.css" />
+    <link rel="stylesheet" href="css/toast.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/button.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/calendar.css" />
+  </head>
+  <body>
+    <div class="calendar-app">
+      <div class="sidebar">
+        <div class="logo">CALENDAR</div>
+        <div class="current-date">
+          <div class="day-name" id="currentDayName"></div>
+          <div class="date" id="currentDate"></div>
+        </div>
+
+        <div class="upcoming-events">
+          <h3>Upcoming Events</h3>
+          <div class="events-list" id="upcomingEvents"></div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <header>
+          <div class="nav">
+            <button id="prevMonth"><i class="arrow">←</i></button>
+            <h1 id="monthYear">May 2023</h1>
+            <button id="nextMonth"><i class="arrow">→</i></button>
+          </div>
+        </header>
+
+        <div class="weekdays">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+
+        <div class="calendar-grid" id="calendar"></div>
+      </div>
+    </div>
+
+    <!-- See More Events Modal -->
+    <div id="seeMoreModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeSeeMoreModal">&times;</span>
+        <h2>Events on <span id="seeMoreDate"></span></h2>
+        <div id="eventsListContainer"></div>
+      </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle">New Event</h2>
+        <div class="form-group">
+          <label>Event Title</label>
+          <input type="text" id="eventTitle" placeholder="Enter event title" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="eventDate" />
+          </div>
+          <div class="form-group">
+            <label>Time</label>
+            <input type="time" id="eventTime" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="eventDescription" rows="3"></textarea>
+        </div>
+        <div class="form-actions">
+          <button id="deleteEvent" class="btn-danger">Delete</button>
+          <button id="saveEvent" class="btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notificationToast" class="toast hidden">
+      <div class="toast-content">
+        <i class="toast-icon"></i>
+        <span class="toast-message"></span>
+      </div>
+    </div>
+
+    <script src="js/mainscript.js"></script>
+  </body>
+</html>
